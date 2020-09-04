@@ -1,0 +1,78 @@
+:root {
+    --s1: 0.5rem;
+    --s2: calc(var(--s1) * 2);
+    --s3: calc(var(--s2) * 3);
+    --measure: 60ch;
+    --color-tomato: tomato;
+    --color-light-blue: rgb(83, 65, 253);
+    --color-white: #ffffff;
+}
+
+html,
+body,
+header,
+main,
+footer,
+div,
+section,
+nav {
+    max-width: none;
+}
+
+* {
+    max-width: var(--measure);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    font-family: monospace;
+    text-decoration: none;
+    letter-spacing: 1px;
+    list-style: none;
+    color: inherit;
+    border-width: 1px;
+    background-color: transparent;
+}
+
+:focus {
+    outline: none;
+}
+
+.box {
+    --box-space: var(--s1);
+    padding: var(--box-space);
+}
+
+.split {
+    display: flex;
+    align-items: center;
+}
+
+.split > :first-child {
+    margin-right: auto;
+}
+
+.split > :last-child {
+    margin-left: auto;
+}
+
+.queue {
+    display: flex;
+    --queue-space: var(--s2);
+}
+
+.queue > * + * {
+    margin-left: var(--queue-space);
+}
+
+.stack > * + * {
+    --stack-space: var(--s2);
+    margin-top: var(--stack-space);
+}
+
+@media screen and (min-width: 600px) {
+    :root {
+        font-size: 150%;
+    }
+}
